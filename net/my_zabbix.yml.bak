@@ -1,0 +1,20 @@
+---
+ - hosts: servers
+   user: root
+   tasks:
+    - name: down_rpm
+      ansible.builtin.shell: 
+        cmd: rpm -Uvh https://mirrors.tuna.tsinghua.edu.cn/zabbix/zabbix/6.0/rhel/7/x86_64/zabbix-release-6.0-1.el7.noarch.rpm
+    - name: install_zabbix-agent2
+      yum:
+        name: zabbix-agent2-6.0.29
+        state: present
+    - name: c_conf
+      shell: sed -i 's/Server=127.0.0.1/Server=192.168.58.10/g' /etc/zabbix/zabbix_agent2.conf
+    - name: c_conf2
+      shell: sed -i 's/ServerActive=127.0.0.1/ServerActive=192.168.58.10/g' /etc/zabbix/zabbix_agent2.conf
+    - name: restart
+      systemd:
+        name: zabbix-agent2
+        state: restarted
+        enabled: yes
