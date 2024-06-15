@@ -26,18 +26,18 @@ date >> $tools_dir/operation_logs.log
 
 tools_dir=$(cd $(dirname $0);pwd)
 
-echo "你想安装的服务是："
 
-echo "####################"
-echo "#你想安装的服务是：#"
-echo "#1 httpd           #"
-echo "#2 nginx           #"
-echo "#3 nfs及rpcbind    #"
-echo "#4 vsftpd          #"
-echo "#5 mysql           #"
-echo "#9 基础环境配置    #"
-echo "#0 退回上级菜单    #"
-echo "####################"
+cat <<EOF
+你想要做的是：
+
+1 httpd
+2 nginx
+3 nfs及rpcbind
+4 vsftpd
+5 mysql
+9 基础环境配置
+0 退回上级菜单
+EOF
 read num 
 
 case $num in 
