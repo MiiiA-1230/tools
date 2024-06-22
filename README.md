@@ -6,6 +6,8 @@
 
 ### 二、使用说明
 
+      set -euo pipefail# 其中的 -u 表示遇到不存在的变量就会报错
+
 ​      开发环境与使用环境是在Vscode与Linux环境中所进行
 
 ​      可以通过bash解释器运行main.sh进入功能菜单，或直接执行相关shell脚本，但需要注意tools_dir变量和add_log函数的使用，可能需要提前准备
