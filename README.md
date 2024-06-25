@@ -6,7 +6,8 @@
 
 ### 二、使用说明
 
-      set -euo pipefail# 其中的 -u 表示遇到不存在的变量就会报错
+      set -euo pipefail
+      # 其中的 -u 表示遇到不存在的变量就会报错
 
 ​      开发环境与使用环境是在Vscode与Linux环境中所进行
 
